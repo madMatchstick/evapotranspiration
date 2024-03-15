@@ -52,6 +52,7 @@ jobs:
         with:
           mod-dir: " extern/noah-owp-modular/"
           targets: "surfacebmi"
+          MAIN_PROJECT: 'ON'
 
       - name: Build ISO C Fortran BMI
         id: submod_build_2
