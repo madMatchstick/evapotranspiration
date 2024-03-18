@@ -44,7 +44,7 @@ jobs:
       - name: checkout actions in another repo
         uses: actions/checkout@v4
         with:
-          repository: madMatchstick/ngen@actions-submod-flag
+          repository: madMatchstick/ngen
 
       - name: Build Surfacebmi
         id: submod_build_1
