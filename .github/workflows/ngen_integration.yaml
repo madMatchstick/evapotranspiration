@@ -44,7 +44,7 @@ jobs:
       - name: checkout actions in another repo
         uses: actions/checkout@v4
         with:
-          repository: noaa-owp/ngen
+          repository: madMatchstick/ngen
 
       - name: Build Surfacebmi
         id: submod_build_1
@@ -52,7 +52,7 @@ jobs:
         with:
           mod-dir: " extern/noah-owp-modular/"
           targets: "surfacebmi"
-          #MAIN_PROJECT: 'ON'
+          is_main_project: 'ON'
 
       - name: Build ISO C Fortran BMI
         id: submod_build_2
@@ -82,8 +82,8 @@ jobs:
           targets: "ngen"
           build-cores: ${{ env.LINUX_NUM_PROC_CORES }}
           #is this required for this test?
-          #bmi_c: 'ON'
-          #bmi_fortran: 'ON'
+          bmi_c: 'ON'
+          bmi_fortran: 'ON'
         timeout-minutes: 15
 
       - name: Prepare to Build Evapotranspiration Library for Ngen
